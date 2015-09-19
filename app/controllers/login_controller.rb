@@ -18,7 +18,7 @@ skip_before_action :require_login
         redirect_to login_index_path
       end
   else
-  		flash.now[:invalid_input] = 'something went wrong! Invalid Email or password!'
+  		flash.now[:invalid_input] = 'Invalid Email or password!'
   		render 'index'
   end
 
