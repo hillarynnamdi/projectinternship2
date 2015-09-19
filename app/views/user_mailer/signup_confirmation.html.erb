@@ -1,0 +1,5 @@
+<h3>Hi <%= @user.try(:first_name) %></h3>
+<p>Thanks for registering! To confirm your registration click the url below.</p>
+<div><%= link_to 'CONFIRM REGISTRATION', edit_account_confirmation_url(@user.activation_token)%></div>
+
+

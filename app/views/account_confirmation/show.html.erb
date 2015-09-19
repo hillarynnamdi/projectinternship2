@@ -1,0 +1,30 @@
+<title>Confirm E-mail Notification</title>
+
+
+<% if @user.account_activated? %>
+
+
+<div class='thank_you_div'>
+
+	<div>
+		
+		<span><%= params[:id] %></span> account has been successfully activated! Thanks once again for joining InvoiceR !
+
+		<p> You can now <%= link_to "login",login_index_path %> </p>
+
+	</div>
+</div>
+
+<% else %>
+
+	<div class='thank_you_div'>
+		
+		<div>
+		Thank you <span><%= params[:id] %></span> for joining InvoiceR,please kindly proceed to verifying your e-mail address by following the link sent to it.
+		</div>
+
+
+	</div>
+
+<%end %>
+
