@@ -9,9 +9,3 @@ $(document).ready(
 )
 
 
-
-$(document).ready(
-	function(){
-	$("#loginflash").slideUp(7000)
-	}
-)
