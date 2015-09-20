@@ -12,7 +12,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :company_country
       t.string :company_email
       t.string :company_phone
-      t.boolean :account_activated
+      t.boolean :account_activated,:default => false
       t.string :activation_token
       t.string :password_digest
 

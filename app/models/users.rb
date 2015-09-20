@@ -1,5 +1,6 @@
 
 class Users < ActiveRecord::Base
+	has_many :clients
 	before_create :confirmation_token
 	before_save { self.email = email.downcase }
 	#with_options presence: :true do |pres|

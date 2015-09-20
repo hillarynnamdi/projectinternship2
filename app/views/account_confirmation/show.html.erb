@@ -1,15 +1,11 @@
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro">
-<title>Confirm E-mail Notification</title>
-
+<% provide(:title,'Confirm E-mail Notification') %>
 
 <% if @user.account_activated? %>
 
-
 <div class='thank_you_div'>
-
 	<div>
-		
-		<span><%= params[:id] %></span> account has been successfully activated! Thanks once again for joining InvoiceR !
+		<span><%= @user.company_name  %></span> account has been successfully activated! Thanks once again for joining InvoiceR !
 
 		<p> You can now <%= link_to "login",login_index_path %> </p>
 
@@ -21,7 +17,7 @@
 	<div class='thank_you_div'>
 		
 		<div>
-		Thank you <span><%= params[:id] %></span> for joining InvoiceR,please kindly proceed to verifying your e-mail address by following the link sent to it.
+		Thank you <span><%= @user.company_name %></span> for joining InvoiceR,please kindly proceed to verifying your e-mail address by following the link sent to it.
 		</div>
 
 

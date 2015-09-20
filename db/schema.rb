@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910185442) do
+ActiveRecord::Schema.define(version: 20150920121451) do
+
+  create_table "clients", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.string   "sex"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -24,7 +38,7 @@ ActiveRecord::Schema.define(version: 20150910185442) do
     t.string   "company_country"
     t.string   "company_email"
     t.string   "company_phone"
-    t.boolean  "account_activated"
+    t.boolean  "account_activated", default: false
     t.string   "activation_token"
     t.string   "password_digest"
     t.datetime "created_at"

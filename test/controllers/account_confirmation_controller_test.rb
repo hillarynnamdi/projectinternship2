@@ -9,6 +9,7 @@ class AccountConfirmationControllerTest < ActionController::TestCase
   test "should get show" do
     get :show
     assert_response :success
+    assert_select   :title,'Confirm E-mail Notification'
   end
 
   test "should get edit" do

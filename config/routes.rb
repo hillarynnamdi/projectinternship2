@@ -2,6 +2,10 @@
 Rails.application.routes.draw do
 
 
+ 
+
+  get 'clients/index'
+
    root 'welcome#index'
 
    resources:sign_up
@@ -11,6 +15,7 @@ Rails.application.routes.draw do
 
     resources:account_confirmation
     resources:dashboard
+    resources:welcome
 
 
 

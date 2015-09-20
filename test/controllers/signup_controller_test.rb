@@ -4,6 +4,7 @@ class SignupControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
+    assert_select   :title,'SIGN UP'
   end
 
   test "should get edit" do
