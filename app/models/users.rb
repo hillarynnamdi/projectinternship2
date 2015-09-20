@@ -2,6 +2,7 @@
 class Users < ActiveRecord::Base
 	before_create :confirmation_token
 	before_save { self.email = email.downcase }
+	#with_options presence: :true do |pres|
 
 
 	
@@ -45,8 +46,8 @@ class Users < ActiveRecord::Base
 
 
 	validates:company_phone, presence: true
-	validates:company_phone, numericality:{only_integer:true},if: "company_phone.present?"
-	validates:company_phone, length: { minimum: 11 },if: "company_phone.present?"
+	validates:company_phone,numericality:{only_integer:true},if: "company_phone.present?"
+	validates:company_phone,length: { minimum: 11 },if: "company_phone.present?"
 	
 
 has_secure_password
