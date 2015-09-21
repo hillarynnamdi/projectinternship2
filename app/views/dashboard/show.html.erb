@@ -6,7 +6,9 @@
 		</div>
 		<div class='company_name'>
 			<%= params[:id]  %>
+			<!--<%= country_select(:company_country, {selected: @user.company_country}) %> -->
 		</div>
+		<div class='client_link'><%= link_to 'CLIENTS' , clients_index_path %></div>
 	</div>
 </div>
 

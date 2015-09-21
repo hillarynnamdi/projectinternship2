@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources:account_confirmation
     resources:dashboard
     resources:welcome
+    resources:clients
 
 
 

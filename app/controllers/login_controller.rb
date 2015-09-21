@@ -1,8 +1,6 @@
 class LoginController < ApplicationController
 skip_before_action :require_login
-
-
-
+before_action :current_user
 
   def index
   end

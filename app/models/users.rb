@@ -10,8 +10,11 @@ class Users < ActiveRecord::Base
 
 	
 
-	validates:first_name, presence:true
-	validates:first_name, length: { maximum: 50 },if: "first_name.present?"
+	validates:first_name, presence:true,
+	length: { maximum: 50 },if: "first_name.present?"
+	
+
+	#validates:first_name, length: { maximum: 50 },if: "first_name.present?"
 	
 
 	validates:last_name, presence:true
