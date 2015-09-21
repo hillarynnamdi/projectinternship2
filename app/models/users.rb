@@ -1,8 +1,10 @@
 
 class Users < ActiveRecord::Base
 	has_many :clients
-	before_create :confirmation_token
+	before_create :confirmation_token 
+	before_create {generate_token(:auth_token)}
 	before_save { self.email = email.downcase }
+
 	#with_options presence: :true do |pres|
 
 
@@ -52,6 +54,16 @@ class Users < ActiveRecord::Base
 	
 
 has_secure_password
+
+
+	
+	def generate_token(column)
+		begin
+			self[column] =SecureRandom.urlsafe_base64
+		end
+			while Users.exists?(column=>self[column])
+		end
+	end
 
 
 

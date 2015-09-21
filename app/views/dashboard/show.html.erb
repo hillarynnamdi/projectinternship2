@@ -5,7 +5,7 @@
 			<h2 class='dashboard_header_text'>invoice r</h2>
 		</div>
 		<div class='company_name'>
-			<%= @user.company_name %>
+			<%= params[:id]  %>
 		</div>
 	</div>
 </div>
@@ -13,4 +13,4 @@
 
 
 
-<%= link_to "Log Out",login_path(@user.company_name),method: :delete %>()
+<%= link_to "Log Out",login_path(params[:id] ),method: :delete %>
