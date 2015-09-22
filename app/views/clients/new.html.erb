@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro">
 <% provide(:title,'ADD CLIENT') %>
 
@@ -55,3 +56,62 @@
 			<% end %>
 	</div>
 
+=======
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro">
+<% provide(:title,'ADD CLIENT') %>
+
+	<div class='wrapper'>
+				
+				<%= form_for :client, url: {action: "create"} do |f| %>
+
+				<div class='table_wrapper'>
+				<%= render 'add_client_error' %>
+					<div class='inner_table_div'>
+						<fieldset>
+							<legend class='legend_text'> ADD CLIENT </legend>			
+							<table border=0px>
+								<tr><td>First Name</td>
+
+								<td><%= f.text_field :first_name %></td></tr>
+
+								<tr><td>Last Name</td>
+
+								<td><%= f.text_field :last_name %></td></tr>
+
+								<tr><td>Email</td>
+
+								<td><%= f.email_field :email %></td></tr>
+
+								
+								<tr><td>Address</td>
+
+								<td><%= f.text_field :address %></td></tr>
+
+								<tr><td>City</td>
+								<td><%= f.text_field :city %></td></tr>
+
+								
+								<tr><td>State</td>
+
+								<td><%= f.text_field :state %></td></tr>
+
+								<tr><td>Country</td>
+
+								<td><%= f.country_select(:country, {selected: @client.country}) %></td></tr>
+
+								<tr><td> Phone Number</td>
+
+								<td><%= f.text_field :phone_number %></td></tr>
+								<tr><td>Gender</td>
+								 <td><%= f.select :gender, [['Male', 'male'], ['Female', 'female']], selected: @client.gender %></td></tr>
+
+								<tr><td>&nbsp;</td><td><%= f.submit 'Submit' %>  </td></tr>
+							</table>
+						</fieldset>
+					</div>
+				</div>
+
+			<% end %>
+	</div>
+
+>>>>>>> 61693db46d311cfaea957361435f88a706f0f4c9

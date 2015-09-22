@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
@@ -9,3 +10,16 @@ two:
   firstname: MyString
   email: MyString
   password_digest: MyString
+=======
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firstname: MyString
+  email: MyString
+  password_digest: MyString
+
+two:
+  firstname: MyString
+  email: MyString
+  password_digest: MyString
+>>>>>>> 61693db46d311cfaea957361435f88a706f0f4c9

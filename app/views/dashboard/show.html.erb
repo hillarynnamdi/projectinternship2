@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro">
 <div class='dashboard_wrapper'>
 	<div class='dashboard_header'>
@@ -15,4 +16,23 @@
 
 
 
+=======
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro">
+<div class='dashboard_wrapper'>
+	<div class='dashboard_header'>
+		<div class='invoicer_div'>
+			<h2 class='dashboard_header_text'>invoice r</h2>
+		</div>
+		<div class='company_name'>
+			<%= params[:id]  %>
+			<!--<%= country_select(:company_country, {selected: @user.company_country}) %> -->
+		</div>
+		<div class='client_link'><%= link_to 'CLIENTS' , clients_index_path %></div>
+	</div>
+</div>
+
+
+
+
+>>>>>>> 61693db46d311cfaea957361435f88a706f0f4c9
 <%= link_to "Log Out",login_path(params[:id] ),method: :delete %>
