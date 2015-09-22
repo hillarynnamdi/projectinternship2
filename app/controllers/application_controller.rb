@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -26,7 +26,6 @@ private
 		
 		end
 	end
-=======
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -54,4 +53,3 @@ private
 		
 		end
 	end
->>>>>>> 61693db46d311cfaea957361435f88a706f0f4c9

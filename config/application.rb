@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -22,7 +22,6 @@ module InvoiceApp
     # config.i18n.default_locale = :de
   end
 end
-=======
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -46,4 +45,4 @@ module InvoiceApp
     # config.i18n.default_locale = :de
   end
 end
->>>>>>> 61693db46d311cfaea957361435f88a706f0f4c9
+
