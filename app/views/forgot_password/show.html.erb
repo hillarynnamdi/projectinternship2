@@ -1,0 +1,40 @@
+<% provide(:title,'New Password') %>
+
+	<div class='wrapper'>
+				
+			
+			 
+			<%= form_for :user,method: :patch,url:forgot_password_path(params[:id])  do|f| %>
+
+				<div class='table_wrapper'>
+					<div class='inner_table_div'>
+					<%= render 'forgot_password/error' %>
+						<fieldset>
+							<legend class='legend_text'> Enter New Password </legend>			
+							<table border=0px>
+								
+
+								<tr><td>Password</td>
+
+								<td><%= f.password_field :password %></td></tr>
+
+								<tr><td>Password Confirmation</td>
+
+								<td><%= f.password_field :password_confirmation %></td></tr>
+
+
+
+								<td>&nbsp;</td><td><%= f.submit 'Change' %>  </td></tr>
+
+								<tr><td>&nbsp;</td><td><%=link_to "Already a user?",login_index_path,style:'font-size:14px' %></td>
+
+								<tr><td>&nbsp;</td><td><%=link_to "Join InvoiceR?",sign_up_index_path,style:'font-size:14px' %></td>
+
+							</table>
+						</fieldset>
+					</div>
+				</div>
+
+			<% end %>
+	</div>
+

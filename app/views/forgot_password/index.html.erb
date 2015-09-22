@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro">
+<% provide(:title,'Forgot Password') %>
+
+	<div class='wrapper'>
+				
+			
+			 
+			<%= form_tag(action: "create")%>
+
+				<div class='table_wrapper'>
+					<div class='inner_table_div'>
+						<fieldset>
+							<legend class='legend_text'> Forgot Password </legend>			
+							<table border=0px>
+								
+
+								<tr><td>Email</td>
+
+								<td><%= email_field_tag :email%></td></tr>
+
+
+								<td>&nbsp;</td><td><%= submit_tag 'Reset my password' %>  </td></tr>
+
+								<tr><td>&nbsp;</td><td><%=link_to "Already a user?",login_index_path,style:'font-size:14px' %></td>
+
+								<tr><td>&nbsp;</td><td><%=link_to "Join InvoiceR?",sign_up_index_path,style:'font-size:14px' %></td>
+
+							</table>
+						</fieldset>
+					</div>
+				</div>
+
+			
+	</div>
+

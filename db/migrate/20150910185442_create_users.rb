@@ -1,0 +1,23 @@
+class CreateUsers < ActiveRecord::Migration
+  def change
+    create_table :users do |t|
+    	
+      t.string :first_name
+      t.string :last_name
+      t.string :email
+      t.string :company_name
+      t.string :company_address
+      t.string :company_city
+      t.string :company_state
+      t.string :company_country
+      t.string :company_email
+      t.string :company_phone
+      t.boolean :account_activated,:default => false
+      t.string :activation_token
+      t.string :password_digest
+
+
+      t.timestamps
+    end
+  end
+end

@@ -1,0 +1,24 @@
+<% provide(:title,'Clients Page') %>
+<div class='client_wrapper'>
+	<div><%= link_to 'ADD CLIENT' , new_client_path %></div>
+	<div class='client_list'>
+		<div class='table_div'>
+			<span id='loginflash'><% flash.each do |name, msg| %>
+					<%= content_tag :div, msg, class: name %>
+					<% end %>
+					</span>
+			<table class='client_table'>
+				<tr>
+					<th>S/N</th><th>FIRSTNAME</th><th>LASTNAME</th><th>NUMBER OF INVOICE</th>
+				</tr>
+					<% @clients.each do |client| %>
+				<tr>
+					<td><%= client.id %></td>
+					<td><%= client.first_name %></td>
+					<td><%= client.last_name %></td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+<div>

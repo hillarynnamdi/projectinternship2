@@ -1,0 +1,16 @@
+
+			<% if @user.errors.any? %>
+			
+			
+
+			<p class='errorpara'>Oop! <%= pluralize(@user.errors.size  , "error") %> found on this form! </p>
+				<ol class='errorli'>
+				<% @user.errors.full_messages.each do |msg| %>
+
+				<li><%= msg %></li>
+
+				<% end %>
+
+				</ol>
+				
+			<% end %>
