@@ -2,11 +2,11 @@ class ForgotPasswordController < ApplicationController
 skip_before_action :require_login
 
   def index
-  	@user=Users.new
+  	@user=User.new
   end
 
   def update
-  	@user=Users.find_by(forgot_token: params[:id])
+  	@user=User.find_by(forgot_token: params[:id])
   	if @user
   		if 
 			@user.forgot_token_sent_at<3.minutes.ago
@@ -31,7 +31,7 @@ skip_before_action :require_login
   end
 
 	def create
-		@user=Users.find_by(email: params[:email].downcase)
+		@user=User.find_by(email: params[:email].downcase)
 			if @user 
 				@user.forgott_token
 				UserMailer.forgot_password(@user).deliver
@@ -46,11 +46,11 @@ skip_before_action :require_login
 	end
 
 	def edit
-		@user=Users.find_by!(forgot_token: params[:id])
+		@user=User.find_by!(forgot_token: params[:id])
 	end
 
 	def show
-		@user=Users.find_by!(forgot_token: params[:id])
+		@user=User.find_by!(forgot_token: params[:id])
 	end
 
 

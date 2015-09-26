@@ -5,11 +5,12 @@ Rails.application.routes.draw do
  
 
 
-  get 'clients/index'
+
+
+
 
    root 'welcome#index'
 
-   resources:sign_up
    resources:login
 
    get "welcome/user"
@@ -18,6 +19,19 @@ Rails.application.routes.draw do
     resources:dashboard
     resources:welcome
     resources:forgot_password
+    resources:clients
+
+    resources:profile
+    get "clients/search"=>"clients#search"
+
+resources :users do
+  resources :clients
+end
+
+  resources :archives
+
+
+
 
 
 

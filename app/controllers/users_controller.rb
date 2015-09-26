@@ -1,12 +1,12 @@
-class SignUpController < ApplicationController
+class UsersController < ApplicationController
 skip_before_action :require_login
 
 	def index
-		@user=Users.new
+		@user=User.new
 	end
 
 	def create
-		@user = Users.new(params_attr)
+		@user = User.new(params_attr)
 			if @user.save
 				UserMailer.signup_confirmation(@user).deliver
 				 session[:confirm_email]="true"

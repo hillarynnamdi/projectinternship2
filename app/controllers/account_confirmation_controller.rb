@@ -6,7 +6,7 @@ skip_before_action :require_login
 
   def show
 	if session[:confirm_email]
-		@user=Users.find_by(company_name: params[:id])
+		@user=User.find_by(company_name: params[:id])
 		session.delete(:confirm_email)
 		
 	else
@@ -18,7 +18,7 @@ end
 
   def edit
 
-  		user=Users.find_by(activation_token: params[:id])
+  		user=User.find_by(activation_token: params[:id])
 			if user
 
 
@@ -27,7 +27,7 @@ end
 				session[:confirm_email]="true"
 				redirect_to account_confirmation_path(user.company_name)
 
-			end
+		
 		
 			else
 				flash[:no_such_user] = 'User does not exist'

@@ -1,0 +1,75 @@
+<% provide(:title,@user.company_name+' Profile') %>
+
+<div class='dashboard_wrapper'>
+
+
+
+		<div class='profile_body_div'>
+
+			<table class='profile_table'>
+
+				<tr>
+					
+				<th colspan=3> <%= @user.company_name %> InvoiceR Profile <span> (<%=link_to "Edit Profile",edit_profile_path(@user.company_name) %>)&nbsp;&nbsp;(<%=link_to "Dashboard",dashboard_path(@user.company_name) %>) &nbsp;</span> </th>
+
+
+				</tr>
+
+				
+
+				<tr>
+					<td> Owner's Full Name: </td> <td class='tddata'> <%= @user.first_name %> <%= @user.last_name %></td><td class='tddata1' rowspan=2 id='logo'>
+					 <% if @user.image? %>
+					<div><span><%= image_tag @user.image_url(),alt:"company logo" %></span>
+					</div>
+					<% else %>
+					company logo here
+					<% end %>
+					</td>
+
+				</tr>
+
+				<tr>
+					<td > Owner's Email: </td> <td class='tddata' > <%= @user.email %></td>
+				</tr>
+
+				<tr>
+					<td> Company Name: </td> <td class='tddata' colspan=2> <%= @user.company_name %> </td>
+				</tr>
+
+				<tr>
+					<td> Company Address: </td> <td class='tddata' colspan=2> <%= @user.company_address %> </td>
+				</tr>
+
+				<tr>
+					<td> Company City: </td> <td class='tddata' colspan=2> <%= @user.company_city %> </td>
+				</tr>
+
+				<tr>
+					<td> Company State: </td> <td class='tddata' colspan=2> <%= @user.company_state %> </td>
+				</tr>
+
+				<tr>
+					<td> Company Country: </td> <td class='tddata' colspan=2> <%= @user.company_country %> </td>
+				</tr>
+
+				<tr>
+					<td>Company Email</td> <td class='tddata' colspan=2> <%= @user.company_email %> </td>
+				</tr>
+
+				
+
+
+
+
+
+
+
+			</table>
+		
+
+
+
+		</div>
+
+</div>

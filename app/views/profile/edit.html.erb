@@ -1,0 +1,96 @@
+<% provide(:title,@user.company_name+'-Edit Profile') %>
+
+<%= render "profile/profile_error" %>
+<div class='dashboard_wrapper'>
+
+
+
+		<div class='profile_body_div'>
+
+		
+
+			<%= form_for :user,method: :patch, url:profile_path(params[:id]),:html => {:multipart => true} do|f| %>
+
+					<table class='profile_table'>
+
+						<tr>
+							
+						<th colspan=3> <%= @user.company_name %> InvoiceR Profile-Edit<span>(<%=link_to "Back",profile_path(@user.company_name) %>) (<%=link_to "Dashboard",dashboard_path(@user.company_name) %>)</span> </th>
+
+						</tr>
+
+						
+
+						<tr>
+							<td>Owner's First Name: </td> <td class='tddata'> <%= f.text_field :first_name,value:@user.first_name %></td>
+							<td class='tddata1' rowspan=2 id='logo'>
+							<% if @user.image? %>
+							<div><span><%= image_tag @user.image_url() %></span></div>
+							<% else %>
+							company logo here
+							<% end%>
+							<%= f.file_field :image %>
+							</td>
+						</tr>
+
+						<tr>
+							<td>Owner's Last Name: </td> <td class='tddata'> <%= f.text_field :last_name,value:@user.last_name %> </td>
+						</tr>
+
+						<tr>
+							<td> Owner's Email: </td> <td class='tddata' colspan=2> <%= f.email_field :email,value:@user.email %></td>
+						</tr>
+
+						<tr>
+							<td> Company Name: </td> <td class='tddata' colspan=2> <%= f.text_field :company_name,value:@user.company_name %> </td>
+						</tr>
+
+						<tr>
+							<td> Company Address: </td> <td class='tddata' colspan=2> <%= f.text_field :company_address,value:@user.company_address %> </td>
+						</tr>
+
+						<tr>
+							<td> Company City: </td> <td class='tddata' colspan=2> <%= f.text_field :company_city,value:@user.company_city %> </td>
+						</tr>
+
+						<tr>
+							<td> Company State: </td> <td class='tddata' colspan=2> <%= f.text_field :company_state,value:@user.company_state %> </td>
+						</tr>
+
+						<tr>
+							<td> Company Country: </td> <td class='tddata' colspan=2> <%= f.country_select(:company_country, {selected: @user.company_country}) %> </td>
+						</tr>
+
+						<tr> 
+							<td>Company Email:</td> <td class='tddata' colspan=2> <%= f.text_field :company_email,value:@user.company_email %> </td>
+						</tr>
+
+						<tr>
+							<td>password:</td> <td class='tddata' colspan=2> <%= f.password_field :password %> </td>
+						</tr>
+
+						<tr>
+							<td>Password Confirmation:</td> <td class='tddata' colspan=2> <%= f.password_field :password_confirmation %> </td>
+						</tr>
+
+						<tr>
+							<td>&nbsp;</td> <td class='tddata' colspan=2> <%= f.submit "Save Changes" %> </td>
+						</tr>
+
+						
+
+
+
+
+
+
+
+					</table>
+				
+
+				<%end%>
+
+
+		</div>
+
+</div>

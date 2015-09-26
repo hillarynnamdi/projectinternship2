@@ -1,0 +1,27 @@
+<% if @user.errors.any? %>
+		<div id='sign_up_error_div'> 
+		<%= image_tag 'close.JPG',style:'float:right;cursor:pointer',id:'close' %>
+			<div style='width:60%;margin:auto;text-align:center'>
+
+			<p class='errorpara'>Oop! <%= pluralize(@user.errors.size  , "error") %> found on this form! </p>
+			<ol class='errorli'>
+			<% @user.errors.full_messages.each do |msg| %>
+
+			<li><%= msg %></li>
+
+			<% end %>
+
+			</ol>
+			</div>
+		</div>
+<% end %>
+
+				
+
+
+
+
+
+				
+
+			

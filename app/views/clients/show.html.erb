@@ -1,0 +1,65 @@
+<% provide(:title,'Clients Page') %>
+
+<div class='client_wrapper'>
+
+	<div class='client_add_div'>
+		
+		<div id='menu_link'>
+			<span><%= link_to '+ ADD CLIENT' , new_client_path %></span>
+			<span><%= link_to 'ACTIVE CLIENTS',client_path(@user.company_name),id:'active' %> (<%= @active.count %>)</span>
+			<span><%= link_to 'ALL CLIENTS',all_clients:true %> (<%= @all.count %>)</span>
+			<span><%= link_to 'DASHBOARD',dashboard_path(@user.company_name) %></span>
+			<span><%= link_to 'SEARCH CLIENTS' ,'#', remote:true,id:'search' %></span>
+			<span><%= link_to 'ARCHIVED CLIENTS',archived:true %> (<%= @archive.count %>)</span>
+		</div>
+
+	</div>
+
+		<div class='table_div'>
+			
+		<%=render "clients/flash" %>
+
+			<table>
+				<tr>
+					<th>S/N</th>
+					<th>Full Name</th>
+					<th>Gender</th>
+					<th>Phone Number</th>
+					<th>Email</th>
+					<th>Address</th>
+					<th>No. of Invoices</th>
+					<th>Action</th>
+				</tr>
+					<% @clients.each_with_index do |client,index| %>
+				<tr>
+					<td><%= index=index+1 %></td>
+					<td><%= client.first_name %> <%= client.last_name %></td>
+					<td><%= client.gender %></td>
+					<td><%= client.phone_number %></td>
+					<td><%= client.email %></td>
+					<td><%= client.address %>, <%= client.city %>, <%= client.country %></td>
+					<td>0</td>
+					<td>
+					<%=link_to"Create Inv." %>
+
+					<% if client.archived? %>
+					<%=link_to"Unarchive",archive_path(client),method: :delete,data: {confirm: 'Are You Sure You Want To Unarchive Client' }%>
+					<% else %>
+					<%=link_to"Archive",archive_path(client),method: :put,data: {confirm: 'Are You Sure You Want To Archive Client' }%>
+					<% end %>
+
+					<%=link_to"Edit",['edit',client.user,client] %>
+					<%=link_to"Delete",[client.user,client],method: :DELETE,data: {confirm: 'Are You Sure You Want To Delete Client' } %>
+					</td>
+				</tr>
+
+				<% end %>
+				<tr>
+					<th colspan=8>
+					<%= will_paginate @clients %>
+					 </th>
+				 </tr>
+		</table>
+			
+		</div>
+	</div>

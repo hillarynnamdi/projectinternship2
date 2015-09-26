@@ -1,0 +1,10 @@
+
+<%= form_tag client_path,method: :get do  %>
+	<span><%= link_to '+ ADD CLIENT' , new_client_path %></span>
+	<span><%= link_to 'ACTIVE CLIENTS',client_path(@user.company_name) %> (<%= @active.count %>)</span>
+	<span><%= link_to 'ALL CLIENTS',all_clients:true %> (<%= @all.count %>)</span>
+	<span><%= link_to 'DASHBOARD',dashboard_path(@user.company_name) %></span>
+	<span><%=text_field_tag :Search %><%=submit_tag "Search",name:nil %></span>
+	<span><%= link_to 'ARCHIVED CLIENTS',archived:true %> (<%= @archive.count %>)</span>
+
+<% end %>

@@ -1,16 +1,27 @@
+<% provide(:title,@user.company_name+" Dashboard") %>
 
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro">
 <div class='dashboard_wrapper'>
-	<div class='dashboard_header'>
-		<div class='invoicer_div'>
-			<h2 class='dashboard_header_text'>invoice r</h2>
+
+		<div class='dashboard_header'>
+
+			<div class='invoicer_div'>
+				<%= @user.company_name %> DashBoard (<%=link_to "logout",login_path(@user.id),method: :DELETE %>)
+			</div>
+
 		</div>
-		<div class='company_name'>
-			<%= params[:id]  %>
-			<!--<%= country_select(:company_country, {selected: @user.company_country}) %> -->
+
+		<div class='Menu'>
+
+		<ul>
+			<li><%=link_to "Profile",profile_path(@user.company_name) %></li>
+			<li><%=link_to "Clients", client_path(@user.company_name) %></li>
+			<li><%=link_to "Invoices" %></li>
+		</ul>
+
+
+
 		</div>
-		<div class='client_link'><%= link_to 'CLIENTS' , clients_index_path %></div>
-	</div>
+
 </div>
 
 

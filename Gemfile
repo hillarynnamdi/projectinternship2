@@ -31,6 +31,12 @@ gem "letter_opener", :group => :development
 
  gem 'country_select', '~> 2.3.0'
 
+ gem 'carrierwave'
+ #gem 'rmagick'
+
+ gem 'will_paginate' , '> 3.0'
+
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

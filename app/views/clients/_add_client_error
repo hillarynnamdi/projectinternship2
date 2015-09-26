@@ -1,48 +1,23 @@
-<<<<<<< HEAD
+
 			
-			<% if @client.errors.any? %>
+		<% if @client.errors.any? %>
 			<div id='sign_up_error_div'> 
-			<%= image_tag 'close.JPG',style:'float:right;cursor:pointer',id:'close' %>
-			<div style='width:60%;margin:auto;text-align:center'>
-			
+				<%= image_tag 'close.JPG',style:'float:right;cursor:pointer',id:'close' %>
+				<div style='width:60%;margin:auto;text-align:center'>
+				
+					<p class='errorpara'>Oop! <%= pluralize(@client.errors.size  , "error") %> found on this form! </p>
+						<ol class='errorli'>
+						<% @client.errors.full_messages.each do |msg| %>
 
-			<p class='errorpara'>Oop! <%= pluralize(@client.errors.size  , "error") %> found on this form! </p>
-				<ol class='errorli'>
-				<% @client.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
 
-				<li><%= msg %></li>
+						<% end %>
 
-				<% end %>
+						</ol>
+						
+					</div>
 
-				</ol>
-				</div>
 				</div>
 			<% end %>
 
 				
-
-=======
-			
-			<% if @client.errors.any? %>
-			<div id='sign_up_error_div'> 
-			<%= image_tag 'close.JPG',style:'float:right;cursor:pointer',id:'close' %>
-			<div style='width:60%;margin:auto;text-align:center'>
-			
-
-			<p class='errorpara'>Oop! <%= pluralize(@client.errors.size  , "error") %> found on this form! </p>
-				<ol class='errorli'>
-				<% @client.errors.full_messages.each do |msg| %>
-
-				<li><%= msg %></li>
-
-				<% end %>
-
-				</ol>
-				</div>
-				</div>
-			<% end %>
-
-				
-
->>>>>>> 61693db46d311cfaea957361435f88a706f0f4c9
-			

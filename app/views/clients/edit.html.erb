@@ -1,46 +1,48 @@
 
-<% provide(:title,'ADD CLIENT') %>
+<% provide(:title,'EDIT CLIENT') %>
 
 	<div class='wrapper'>
 
 			
 				
-			<%= form_for([@user, @user.clients.build]) do |f| %>
+		<%= form_for([@client.user,@client]) do |f| %>
 
-				<div class='table_wrapper'>
+			<div class='table_wrapper'>
 					<%= render 'clients/add_client_error' %>
-					<div class='inner_table_div'>
-						<div class='client_add_div'>
-							<%= link_to 'Back to CLIENTS' , client_path(@user.company_name) %>
+				<div class='inner_table_div'>
+					<div class='client_add_div'>
 		
-						</div>
-							<fieldset>
-								<legend class='legend_text'> ADD CLIENT </legend>			
+					<%= link_to 'Back to CLIENTS' , client_path(@user.company_name) %>
+		
+					</div>
+
+						<fieldset>
+							<legend class='legend_text'> EDIT CLIENT </legend>			
 								<table border=0px>
 									<tr><td>First Name</td>
 
-									<td><%= f.text_field :first_name %></td></tr>
+									<td><%= f.text_field :first_name,value:@client.first_name %></td></tr>
 
 									<tr><td>Last Name</td>
 
-									<td><%= f.text_field :last_name %></td></tr>
+									<td><%= f.text_field :last_name,value:@client.last_name %></td></tr>
 
 									<tr><td>Email</td>
 
-									<td><%= f.email_field :email %></td></tr>
+									<td><%= f.email_field :email,value:@client.email %></td></tr>
 
 									
 									<tr><td>Address</td>
 
-									<td><%= f.text_field :address %></td></tr>
+									<td><%= f.text_field :address,value:@client.address %></td></tr>
 
 									<tr><td>City</td>
-									<td><%= f.text_field :city %></td></tr>
+									<td><%= f.text_field :city,value:@client.city %></td></tr>
 
 									
 									<tr><td>State</td>
 
-									<td><%= f.text_field :state %></td></tr>
+									<td><%= f.text_field :state,value:@client.state %></td></tr>
 
 									<tr><td>Country</td>
 
@@ -53,7 +55,7 @@
 									 <td><%= f.select :gender, [['Male', 'male'], ['Female', 'female']], selected: @client.gender %></td></tr>
 
 									<tr><td>&nbsp;</td><td><%= f.submit 'Submit' %>  </td></tr>
-								</table>
+							</table>
 						</fieldset>
 					</div>
 				</div>

@@ -10,4 +10,15 @@ $(document).ready(
 )
 
 
+$(document).ready(
+	function(){
+		$("#close").click(
+		function(){
+			$("#profile_error_div").hide()
+		}
+		)
+	}
+)
+
+
 

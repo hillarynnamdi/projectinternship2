@@ -1,89 +1,231 @@
 
 body{
 
-	background-color: grey;
+	
 	margin:0px;
 	padding:0px;
-	
-}
-/* clients page styles below */
-
-.client_wrapper{
-	background-color: white;
-	height: 700px;
-	width:justify;
-
-}
-
-.table_div{
-	margin-left: 170px;
-	margin-top: 50px;
-	padding-top: 50px;
-	
+	background-color: #eeeeee
 	
 }
 
-.client_table{
-
-	text-align: center;
-}
-
-.client_list{
-
-	width:700px;
-	height: 600px;
-	background-color: grey;
-	margin: auto;
-	border-radius: 10px;
-}
-
-.client_link{
-	margin-right: 30px;
-	float: right;
-}
 
 /*this is the dashboard styles below */
 .dashboard_wrapper{
 
 	margin: auto;
-	height: 700px;
 	background-color: white;
-	background-image: url("<%= asset_data_uri 'building.jpg' %>");
-
+	width:80%;
+	padding:30px;
+	padding-bottom:70px;
+	box-shadow: 0px 3px 5px black
 }
+
+
 
 .dashboard_header{
-	float: left;
 	font-family: 'Source Sans Pro' , serif;
+	margin:20px auto;
+	width:80%;
+	text-align:center;
+	background-color:#eeeeee;
+	border-radius: 30%;
+	padding:2%;
+}
+
+
+#logo div{
 	
-	width: 1350px;
+	float:right;
+	border:1px solid white;
+	padding:10px;
+	border-radius:60%;
+	background-color: white
 	
 }
+
+#logo span img{
+	border-radius: 60%;
+	border:1px solid #eeeeee;
+}
+	
 
 .invoicer_div{
-	background-color: white;
-	border-radius: 5px;
-	width: 100px;
-	margin-left: 20px;
+	margin:10px;
+	font-size:18px;
+	font-family:arial;
 }
 
-.dashboard_header_text{
-	text-transform: capitalize;
-	text-align: center;
+.Menu{
+	width:40%;
+	margin:auto;
+	text-align:center;
+	background-color:white;
 }
 
-.company_name{
-	text-transform: uppercase;
-	background-color: blue;
-	color: white;
-	border-radius: 5px;
-	text-align: justify;
-	float: right;
-	margin-top: -50px;
-	margin-right: 20px;
-	font-size: 20px;
-	font-family: 'Source Sans Pro' , serif;
+
+.Menu ul li{
+	list-style-type: none;
+	text-decoration:none;
+	margin-bottom: 30px
 }
+
+.Menu ul li a{
+	text-decoration:none;
+	display:block;
+	height:100px;
+	background-color:#eeeeee;
+	border-radius: 100%;
+	padding-top: 50px;
+	color:black;
+	font-size:17px;
+	font-family: arial;
+	box-shadow: 0px 3px 5px black
+
+}
+
+.Menu ul li a:hover{
+	text-decoration:none;
+	display:block;
+	height:100px;
+	background-color:#eeeeee;
+	border-radius: 100%;
+	padding-top: 50px;
+	color:black;
+	font-size:17px;
+	font-family: arial;
+	box-shadow: 0px 3px 5px grey
+
+}
+
+
+.profile_table{
+	width:80%;
+	background-color:silver;
+	margin:auto;
+	padding:10px;
+	box-shadow: 0px 3px 5px grey
+}
+
+.profile_table tr td{
+padding:19px;
+text-align: center;
+font-family:sans-serif,arial;
+font-size:14px;
+letter-spacing: 0.5px;
+background-color:#eeeeee;
+border-radius: 10px 0px 0px 10px
+
+
+}
+
+
+.profile_table tr td input{
+width:80%;
+text-align: center;
+padding:7px;
+box-shadow: 0px 2px 2px silver
+
+}
+
+.profile_table tr td select{
+width:80%;
+text-align: center;
+padding:7px;
+box-shadow: 0px 2px 2px silver
+
+}
+
+
+
+.profile_table tr{
+
+
+padding:10px;
+
+}
+
+.profile_table th{
+
+
+padding:10px;
+font-size:20px !important;
+text-align: left;
+color:#eeeeee;
+font-weight:bold;
+letter-spacing:0.3px;
+font-family:tahoma;
+
+}
+
+.profile_table th span{
+
+
+float:right;
+color:darkblue;
+font-family:tahoma;
+
+}
+
+#profile_error_div{
+
+	border:1px solid silver;
+	position:absolute;
+	background-color:#fffeee;
+	margin-left:200px;
+	width:70%;
+
+	box-shadow: 0px 5px 5px #eeeeee;
+
+
+}
+
+
+
+
+.tddata{
+	font-family:tahoma !important;
+	font-size:18px;
+	background-color:#eeeeee !important;
+	padding:0px !important;
+	border-radius: 0px 10px 10px 0px !important;
+	font-weight:2em;
+	width:30%;
+	padding:10px !important;
+	
+}
+
+.tddata1{
+	font-family:tahoma !important;
+	font-size:18px;
+	background-color:#eeeeee !important;
+	padding:0px !important;
+	border-radius: 0px 10px 10px 0px !important;
+	font-weight:2em;
+	width:30%;
+	padding:10px !important;
+	text-align:center !important;
+	
+}
+
+.tddata1 div{
+	background-color:white !important;
+	text-align:center !important;
+	border-radius: 100%;
+	margin:auto;
+	
+}
+
+
+.tddata1 div img{
+	width:60%;
+	
+}
+
+
+
+
+
+
 .welcome{
 
 	width:960px;
@@ -282,7 +424,7 @@ color:blue;
 		width:60%;
 		margin:40px auto;
 		background-color:white;
-		box-shadow: 0px 3px 5px #eeeeee
+		box-shadow: 0px 3px 5px grey
 
 }
 
@@ -313,4 +455,86 @@ color:blue;
 	color:red;
 	text-decoration:none;
 	font-family: 'Source Sans Pro' , serif;
+}
 
+
+.client_wrapper{
+
+width:90%;
+margin:10px auto;
+background-color:white;
+padding:10px;
+box-shadow: 0px 3px 5px black
+
+
+}
+
+.client_wrapper table{
+
+width:90%;
+margin:auto;
+
+
+}
+
+.client_wrapper table tr td{
+	
+padding:10px;
+text-align:center;
+font-family:arial;
+font-size:18px;
+box-shadow: 0px 3px 5px #eeeeee;
+text-transform: capitalize;
+
+}
+
+
+.client_wrapper table tr td a{
+	
+font-size:12px;
+display: block;
+margin-bottom: 2px
+
+}
+
+
+
+.client_wrapper table tr th{
+	
+text-align:center;
+font-family:tahoma;
+font-size:18px;
+border:1px solid #eeeeee;
+padding:15px;
+width:400px;
+
+}
+
+.client_wrapper table tr th a{
+	
+font-size:14px !important;
+font-weight: bold
+
+}
+
+.client_add_div{
+
+	padding:10px;
+	text-align:center;
+
+}
+
+.pagination a{
+padding:5px;
+border:1px solid darkblue;
+text-decoration: none;
+font-size:30px;
+}
+
+.client_add_div a:link{
+	color:blue;
+}
+
+.client_add_div span{
+	margin-right:15px;
+}
