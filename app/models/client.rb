@@ -1,6 +1,7 @@
 class Client < ActiveRecord::Base
 	before_save { self.email = email.downcase }
 	belongs_to :user
+	has_many :invoices
 
 
 

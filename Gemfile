@@ -36,7 +36,7 @@ gem "letter_opener", :group => :development
 
  gem 'will_paginate' , '> 3.0'
 
-
+ gem 'prawn'
 # Use unicorn as the app server
 # gem 'unicorn'
 

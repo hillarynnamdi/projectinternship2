@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
 
 
+  
+
    root 'welcome#index'
 
    resources:login
@@ -20,7 +22,7 @@ Rails.application.routes.draw do
     resources:welcome
     resources:forgot_password
     resources:clients
-
+    resources:invoices
     resources:profile
     get "clients/search"=>"clients#search"
 

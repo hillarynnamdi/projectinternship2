@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_code: MyString
+  description: MyString
+  qty: MyString
+  unit: MyString
+  total: MyString
+  client_id: 
+
+two:
+  item_code: MyString
+  description: MyString
+  qty: MyString
+  unit: MyString
+  total: MyString
+  client_id: 

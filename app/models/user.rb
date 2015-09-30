@@ -1,6 +1,7 @@
 
 class User < ActiveRecord::Base
 	has_many :clients
+	has_many :invoices through: :clients
 	before_create :confirmation_token 
 
 	before_create {generate_token(:auth_token)}

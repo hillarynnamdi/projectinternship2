@@ -40,8 +40,8 @@
 					<td><%= client.address %>, <%= client.city %>, <%= client.country %></td>
 					<td>0</td>
 					<td>
-					<%=link_to"Create Inv." %>
-
+					<%=link_to "Create Inv.",edit_invoice_path(client) %>
+					
 					<% if client.archived? %>
 					<%=link_to"Unarchive",archive_path(client),method: :delete,data: {confirm: 'Are You Sure You Want To Unarchive Client' }%>
 					<% else %>
