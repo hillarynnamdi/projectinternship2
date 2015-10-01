@@ -76,6 +76,7 @@
 			</ul>
 		</div>
 	</div>
+
 		<div class='table_div'>
 			<table border='1'>
 				<tr>
@@ -83,9 +84,19 @@
 					<th>description</th>
 					<th>qty</th>
 					<th>unit</th>
-					<th>price</th>
 					<th>total</th>
 				</tr>
+				<tr>
+			<%= form_for [@user, @client, @invoice],url:'/' do |f| %>
+					<td><%= f.text_field :item_code %></td>
+					<td><%= f.text_field :description %></td>
+					<td><%= f.text_field :qty %></td>
+					<td><%= f.text_field :unit %></td>
+					<td><%= f.text_field :total %></td>					
+				</tr>
+					
 			</table>
+			<%= f.submit 'preview'%>
+			<% end %>
 		</div>
 </div>

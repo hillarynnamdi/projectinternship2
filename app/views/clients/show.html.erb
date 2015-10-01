@@ -6,7 +6,8 @@
 		
 		<div id='menu_link'>
 			<span><%= link_to '+ ADD CLIENT' , new_client_path %></span>
-			<span><%= link_to 'ACTIVE CLIENTS',client_path(@user.company_name),id:'active' %> (<%= @active.count %>)</span>
+			<span><%= link_to 'ACTIVE CLIENTS',client_path(@user.company_name),id:'active' %> (<%= @active.count %>)
+			</span>
 			<span><%= link_to 'ALL CLIENTS',all_clients:true %> (<%= @all.count %>)</span>
 			<span><%= link_to 'DASHBOARD',dashboard_path(@user.company_name) %></span>
 			<span><%= link_to 'SEARCH CLIENTS' ,'#', remote:true,id:'search' %></span>
@@ -38,9 +39,9 @@
 					<td><%= client.phone_number %></td>
 					<td><%= client.email %></td>
 					<td><%= client.address %>, <%= client.city %>, <%= client.country %></td>
-					<td>0</td>
+					<td><%= client.invoices.count %></td>
 					<td>
-					<%=link_to "Create Inv.",edit_invoice_path(client) %>
+					<%= link_to "Create Inv." ,new_user_client_invoice_path(@user.id,client.id) %>
 					
 					<% if client.archived? %>
 					<%=link_to"Unarchive",archive_path(client),method: :delete,data: {confirm: 'Are You Sure You Want To Unarchive Client' }%>

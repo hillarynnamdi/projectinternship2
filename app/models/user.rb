@@ -1,11 +1,14 @@
 
 class User < ActiveRecord::Base
-	has_many :clients
-	has_many :invoices through: :clients
+	has_many :clients , dependent: :destroy
+	has_many :invoices , through: :clients
+
 	before_create :confirmation_token 
 
 	before_create {generate_token(:auth_token)}
 	before_save { self.email = email.downcase }
+
+	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
 	mount_uploader :image, ImageUploader
 
@@ -24,10 +27,6 @@ class User < ActiveRecord::Base
 
 	validates:last_name, presence:true
 	validates:last_name, length: { maximum: 50 },if: "last_name.present?"
-
-
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-
 
 	validates:email, presence:true
 	validates:email, 
@@ -81,8 +80,6 @@ class User < ActiveRecord::Base
 		end
 	end
 
-
-
 	def clear_forgott_token
 		update_attribute(:forgot_token,  nil)
     	update_attribute(:forgot_token_sent_at, nil)
@@ -110,6 +107,5 @@ class User < ActiveRecord::Base
 				self.activation_token = SecureRandom.urlsafe_base64.to_s
 			end
 	end
-
 
 end

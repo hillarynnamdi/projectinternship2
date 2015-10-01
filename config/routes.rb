@@ -27,7 +27,9 @@ Rails.application.routes.draw do
     get "clients/search"=>"clients#search"
 
 resources :users do
-  resources :clients
+  resources :clients do
+  resources :invoices
+end
 end
 
   resources :archives
