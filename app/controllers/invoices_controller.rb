@@ -1,8 +1,7 @@
 class InvoicesController < ApplicationController
 
   def index
-    #@invoice =Invoice.new
-    @user=current_user
+    @user=User.find_by!(params[:user_id])
     @client=@user.clients.find_by(id:params[:id])
     @invoice = Invoice.find_by(id:params[:id])
   end
@@ -40,7 +39,7 @@ class InvoicesController < ApplicationController
 
   def update
 
-     @user=current_user
+     @user=User.find_by(params[:user_id])
     @client = Client.find_by(params[:client_id])  
     @invoice = Invoice.find_by(params[:id])
     if @invoice
