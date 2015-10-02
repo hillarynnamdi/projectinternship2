@@ -16,14 +16,13 @@ Rails.application.routes.draw do
    resources:login
 
    get "welcome/user"
-
+   get 'invoices/invoice_link'
     resources:account_confirmation
     resources:dashboard
     resources:welcome
     resources:forgot_password
-    resources:clients
-    resources:invoices
     resources:profile
+    resources:invoices
     get "clients/search"=>"clients#search"
 
 resources :users do

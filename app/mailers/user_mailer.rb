@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "chrisgeek@gmail.com"
+  default from: "chrisgeeq@gmail.com"
 
  def signup_confirmation(user)
  	@user=user
@@ -13,6 +13,11 @@ class UserMailer < ActionMailer::Base
  	mail(:to => user.email,:subject =>'Password Recovery-InvoiceR')
  end
 
- 	
+ def invoice_mail(client)
+ 	@client = client
+ 	mail(:to => client,:subject => 'New Invoice')
+ end
+
+
 end
 

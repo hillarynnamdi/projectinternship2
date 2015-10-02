@@ -9,7 +9,7 @@ skip_before_action :require_login
   	@user=User.find_by(forgot_token: params[:id])
   	if @user
   		if 
-			@user.forgot_token_sent_at<3.minutes.ago
+			@user.forgot_token_sent_at < 3.minutes.ago
 			@user.clear_forgott_token
 			redirect_to login_index_path
 			flash[:change_pass]="Your password link has expired"

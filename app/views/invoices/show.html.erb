@@ -1,2 +1,32 @@
-<h1>Invoices#show</h1>
-<p>Find me in app/views/invoices/show.html.erb</p>
+<% provide(:title,'Send Invoice') %>
+	<div class='invoice'>
+		<%= render 'invoices/invoice_template' %>
+		<div class='table_div'>
+			<table border=1>
+				<tr>
+					<th>item code</th>
+					<th>description</th>
+					<th>qty</th>
+					<th>unit</th>
+					<th>total</th>
+				</tr>
+				<tr>
+					<td><%= @invoice.item_code %></td>
+					<td><%= @invoice.description %></td>
+					<td><%= @invoice.qty %></td>
+					<td><%= @invoice.unit %></td>
+					<td><%= @invoice.total %></td>					
+				</tr>					
+			</table>				
+				<div>
+					<div class='send'>
+						<%= link_to 'send', invoice_path(@invoice) ,method: :put %>
+					</div>
+					<div class='cancel'>
+						<%= link_to 'cancel' , invoice_path(@invoice), method: :delete,
+      					 data:{ confirm: "sure to delete ?"} %>
+					</div>
+				</div>		
+		</div>
+	</div>
+	
