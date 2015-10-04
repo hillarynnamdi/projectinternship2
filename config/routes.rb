@@ -16,13 +16,15 @@ Rails.application.routes.draw do
    resources:login
 
    get "welcome/user"
-   get 'invoices/invoice_link'
+   get 'invoices/:id/invoice_link' => 'invoices#invoice_link'
     resources:account_confirmation
     resources:dashboard
     resources:welcome
     resources:forgot_password
     resources:profile
     resources:invoices
+    resources:clients
+    resources:archives
     get "clients/search"=>"clients#search"
 
 resources :users do
@@ -31,7 +33,7 @@ resources :users do
 end
 end
 
-  resources :archives
+ 
 
 
 

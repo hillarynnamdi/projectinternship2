@@ -1,1 +1,79 @@
-<h3>index page</h3>
+<h3>index page</h3><div class='invoice_header'>
+		<div class='logo'>
+				<span class='logo_span'>
+					<%= image_tag @user.image_url(),alt:"company logo" %>
+				</span>
+				<ul>
+					<li>
+						<%= @user.company_name %>
+					</li>
+					<li>
+						<%= @user.company_address %>,						
+					</li>
+					<li>
+						<%= @user.company_city %>,
+						<%= @user.company_state %>.
+					</li>
+					<li>
+						<%= @user.company_country %>.
+					</li>
+					<li>
+						phone:<%= @user.company_phone %>
+					</li>
+					<li class='bill_text'>
+						bill to :
+					</li>
+					<li>
+						<%= @client.first_name%> <%= @client.last_name %>
+					</li>
+					<li>
+						<%= @client.address %> , 
+					</li>
+					<li>
+						<%= @client.city %>,
+						<%= @client.state %>.
+					</li>
+					<li>
+						<%= @client.country %>.
+					</li>
+				</ul>
+		</div>
+		<div class='middle'>
+			<ul>
+				<li class='ship_to'>ship to :</li>
+				<li>
+					<%= @client.first_name%> <%= @client.last_name %>
+				</li>
+				<li>
+					<%= @client.address %> ,
+				</li>
+				<li>
+					<%= @client.city %>,
+					<%= @client.state %>.
+				</li>
+				<li>
+					<%= @client.country %>.
+				</li>
+			</ul>
+		</div>
+		<div class='invoice_text'>
+			<p class='invoice_img'>
+				invoice
+			</p>
+			<ul>
+				<li>
+					date : <%= @client.created_at.strftime("%d %b. %Y") %>
+				</li>
+				<li>
+					invoice # :	<%= @invoice.id %>
+				</li>
+				<li>
+					client id : <%= @client.id %>
+				</li>
+				<li>
+					date due : 
+				</li>
+			</ul>
+		</div>
+	</div>
+

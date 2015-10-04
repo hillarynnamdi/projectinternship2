@@ -62,13 +62,13 @@
 			</p>
 			<ul>
 				<li>
-					date : 
+					date : <%= @invoice.created_at.strftime("%d %b. %Y")%>
 				</li>
 				<li>
-					invoice # :
+					invoice # :<%= @invoice.id %>
 				</li>
 				<li>
-					client id :
+					client id :<%= @client.id %>
 				</li>
 				<li>
 					date due : 

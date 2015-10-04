@@ -15,7 +15,7 @@ class UserMailer < ActionMailer::Base
 
  def invoice_mail(client)
  	@client = client
- 	mail(:to => client,:subject => 'New Invoice')
+ 	mail(:to => client.email,:subject => 'New Invoice')
  end
 
 

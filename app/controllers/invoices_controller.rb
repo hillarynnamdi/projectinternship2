@@ -1,15 +1,15 @@
 class InvoicesController < ApplicationController
 
   def index
-    @user=User.find_by!(params[:user_id])
-    @client=@user.clients.find_by(id:params[:id])
-    @invoice = Invoice.find_by(id:params[:id])
+    @user=User.find_by(params[:user_id])
+    @client=Client.find_by(params[:client_id])
+     @invoice = Invoices.find_by(params[:id])
   end
 
   def show   
     @user=current_user
-    @client=Client.find_by(id:params[:client_id])
-    @invoice = Invoice.find(params[:id])
+    @client=Client.find_by(params[:client_id])
+    @invoice = @client.invoices.find_by(id:params[:id])
   end
 
   def new
@@ -19,17 +19,15 @@ class InvoicesController < ApplicationController
   end 
 
   def edit
-  	@user=User.find(id:params[:user_id])
-  	@client=Client.find(id:params[:client_id])
-    @invoice=Invoice.find_by(id:params[:id])
-   
+  	@user=User.find_by(params[:user_id])
+  	@client=Client.find_by(params[:client_id])
+    @invoice = Invoice.find_by(id:params[:id])
   end
 
   def create
     @user=current_user
     @client = Client.find_by(id:params[:client_id])
     @invoice = @client.invoices.new(attr_params)
-
     if @invoice.save
        redirect_to user_client_invoice_path(@user.id,@client,@invoice.id)
     else
@@ -39,9 +37,9 @@ class InvoicesController < ApplicationController
 
   def update
 
-     @user=User.find_by(params[:user_id])
+    @user=User.find_by(params[:user_id])
     @client = Client.find_by(params[:client_id])  
-    @invoice = Invoice.find_by(params[:id])
+    @invoice=Invoice.find_by(id:params[:id])
     if @invoice
       UserMailer.invoice_mail(@client).deliver
       flash[:change_pass]="Invoice sent successfully!"
@@ -57,6 +55,9 @@ class InvoicesController < ApplicationController
     @invoice.destroy
     redirect_to client_path(@user.company_name)
   end
+def invoice_link
+
+end
 
 private 
   def attr_params

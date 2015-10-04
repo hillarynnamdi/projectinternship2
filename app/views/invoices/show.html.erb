@@ -23,8 +23,8 @@
 						<%= link_to 'send', invoice_path(@invoice) ,method: :put %>
 					</div>
 					<div class='cancel'>
-						<%= link_to 'cancel' , invoice_path(@invoice), method: :delete,
-      					 data:{ confirm: "sure to delete ?"} %>
+						<%= link_to 'cancel' , user_client_invoice_path(@user,@client,@invoice.id), method: :delete,
+      					 data:{ confirm: "sure to can ?"} %>
 					</div>
 				</div>		
 		</div>

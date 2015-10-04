@@ -3,6 +3,7 @@ class Client < ActiveRecord::Base
 	belongs_to :user
 	has_many :invoices
 
+VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
 
 	validates:first_name, presence:true
@@ -15,8 +16,7 @@ class Client < ActiveRecord::Base
 	length: { maximum: 50 },if: "last_name.present?"
 
 
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-
+	
 
 	validates:email, presence:true
 	validates:email, 
